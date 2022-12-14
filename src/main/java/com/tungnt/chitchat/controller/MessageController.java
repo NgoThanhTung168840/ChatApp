@@ -43,7 +43,7 @@ public class MessageController {
     }
 	
 	@RequestMapping(value = "/message/{id}", method = RequestMethod.DELETE)
-    public ResponseEntity<Message> deleteProduct(@PathVariable("id") Long id) {
+    public ResponseEntity<Message> deleteMessage(@PathVariable("id") Long id) {
         Optional<Message> message = messageService.findById(id);
         if (!message.isPresent()) {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
